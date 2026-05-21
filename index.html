@@ -156,7 +156,7 @@
 <header>
   <div class="header-label">Bitcoin Seoul 2026 — Official Program</div>
   <h1>세션 프로그램</h1>
-  <div class="header-meta">June 4–5, 2026 &nbsp;·&nbsp; 그랜드볼룸 (1F) &nbsp;+&nbsp; 에메랄드홀 (3F) &nbsp;·&nbsp; 그랜드 워커힐 서울</div>
+  <div class="header-meta">June 4–5, 2026 &nbsp;·&nbsp; 여의도 KIF</div>
 </header>
 
 <div class="filter-bar">
@@ -514,6 +514,7 @@ function renderMobileCards() {
   const groups = {};
   const groupOrder = [];
   ALL_SESSIONS.forEach(s => {
+    if (!s.hall) return;
     const key = s.day + '|' + s.hall;
     if (!groups[key]) { groups[key] = []; groupOrder.push(key); }
     groups[key].push(s);
