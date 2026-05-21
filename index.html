@@ -116,7 +116,7 @@
     footer { padding: 16px; }
 
     /* 데스크탑 테이블 숨기고 모바일 카드 표시 */
-    .desktop-table { display: none; }
+    .hall-block { display: none !important; }
     #mobile-view { display: block; }
 
     /* 모바일 카드 스타일 */
@@ -514,7 +514,6 @@ function renderMobileCards() {
   const groups = {};
   const groupOrder = [];
   ALL_SESSIONS.forEach(s => {
-    if (!s.hall) return;
     const key = s.day + '|' + s.hall;
     if (!groups[key]) { groups[key] = []; groupOrder.push(key); }
     groups[key].push(s);
